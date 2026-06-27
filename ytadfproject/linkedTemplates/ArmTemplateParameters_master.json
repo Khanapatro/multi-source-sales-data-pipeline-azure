@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ytadfproject"
+		},
+		"ProjectDBLinkedservice_password": {
+			"value": ""
+		},
+		"ProjectStorageLinkedservice_connectionString": {
+			"value": ""
+		},
+		"ProjectDBLinkedservice_properties_typeProperties_server": {
+			"value": "ytprojectserver.database.windows.net"
+		},
+		"ProjectDBLinkedservice_properties_typeProperties_database": {
+			"value": "ytprojectdb"
+		},
+		"ProjectDBLinkedservice_properties_typeProperties_userName": {
+			"value": "ytserveradmin"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
