@@ -15,10 +15,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'ProjectDBLinkedservice'"
 		},
-		"ProjectStorageLinkedservice_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'ProjectStorageLinkedservice'"
-		},
 		"AzureDataLakeStorage_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://ytprojectstorage.dfs.core.windows.net/"
@@ -440,19 +436,6 @@
 						"type": "SecureString",
 						"value": "[parameters('ProjectDBLinkedservice_password')]"
 					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/ProjectStorageLinkedservice')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('ProjectStorageLinkedservice_connectionString')]"
 				}
 			},
 			"dependsOn": []

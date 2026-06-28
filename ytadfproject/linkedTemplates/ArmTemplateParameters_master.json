@@ -11,9 +11,6 @@
 		"ProjectDBLinkedservice_password": {
 			"value": ""
 		},
-		"ProjectStorageLinkedservice_connectionString": {
-			"value": ""
-		},
 		"AzureDataLakeStorage_properties_typeProperties_url": {
 			"value": "https://ytprojectstorage.dfs.core.windows.net/"
 		},

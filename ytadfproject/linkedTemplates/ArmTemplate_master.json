@@ -15,10 +15,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'ProjectDBLinkedservice'"
 		},
-		"ProjectStorageLinkedservice_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'ProjectStorageLinkedservice'"
-		},
 		"AzureDataLakeStorage_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://ytprojectstorage.dfs.core.windows.net/"
@@ -67,9 +63,6 @@
 					},
 					"ProjectDBLinkedservice_password": {
 						"value": "[parameters('ProjectDBLinkedservice_password')]"
-					},
-					"ProjectStorageLinkedservice_connectionString": {
-						"value": "[parameters('ProjectStorageLinkedservice_connectionString')]"
 					},
 					"AzureDataLakeStorage_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage_properties_typeProperties_url')]"
