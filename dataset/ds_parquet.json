@@ -1,0 +1,20 @@
+{
+	"name": "ds_parquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ProjectStorageLinkedservice",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "sales_db",
+				"container": "bronze"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
