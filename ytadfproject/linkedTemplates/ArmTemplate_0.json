@@ -193,31 +193,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/ds_parquet')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "ProjectStorageLinkedservice",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Parquet",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobStorageLocation",
-						"folderPath": "sales_db",
-						"container": "bronze"
-					},
-					"compressionCodec": "snappy"
-				},
-				"schema": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/ProjectStorageLinkedservice')]"
-			]
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/DatabaseIngestion')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
