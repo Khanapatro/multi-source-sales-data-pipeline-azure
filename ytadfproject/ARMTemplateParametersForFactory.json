@@ -5,11 +5,17 @@
 		"factoryName": {
 			"value": "ytadfproject"
 		},
+		"AzureDataLakeStorage_accountKey": {
+			"value": ""
+		},
 		"ProjectDBLinkedservice_password": {
 			"value": ""
 		},
 		"ProjectStorageLinkedservice_connectionString": {
 			"value": ""
+		},
+		"AzureDataLakeStorage_properties_typeProperties_url": {
+			"value": "https://ytprojectstorage.dfs.core.windows.net/"
 		},
 		"ProjectDBLinkedservice_properties_typeProperties_server": {
 			"value": "ytprojectserver.database.windows.net"
