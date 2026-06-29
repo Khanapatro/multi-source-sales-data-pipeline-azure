@@ -101,7 +101,7 @@
 								{
 									"type": "Query",
 									"text": {
-										"value": "select count(*) as total_result\nfrom @{pipeline().parameters.schema}.@{pipeline().parameters.table}\nwhere last_updated >\n'@{activity('last_cdc').output.firstRow.cdc_timestamp}'",
+										"value": "select count(*) as total_result\nfrom @{pipeline().parameters.schema}.@{pipeline().parameters.table}\nwhere last_updated >\n'@{if(empty(pipeline().parameters.backdate),activity('last_cdc').output.firstRow.cdc_timestamp,pipeline().parameters.backdate)}'",
 										"type": "Expression"
 									}
 								}
@@ -143,7 +143,7 @@
 										"source": {
 											"type": "AzureSqlSource",
 											"sqlReaderQuery": {
-												"value": "select *\nfrom @{pipeline().parameters.schema}.@{pipeline().parameters.table}\nwhere last_updated >\n'@{activity('last_cdc').output.firstRow.cdc_timestamp}'",
+												"value": "select * \nfrom @{pipeline().parameters.schema}.@{pipeline().parameters.table}\nwhere last_updated >\n'@{if(empty(pipeline().parameters.backdate),activity('last_cdc').output.firstRow.cdc_timestamp,pipeline().parameters.backdate)}'",
 												"type": "Expression"
 											},
 											"queryTimeout": "02:00:00",
@@ -289,6 +289,9 @@
 					"table": {
 						"type": "string",
 						"defaultValue": "sales"
+					},
+					"backdate": {
+						"type": "string"
 					}
 				},
 				"annotations": []
