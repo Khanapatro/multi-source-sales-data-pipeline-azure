@@ -31,6 +31,10 @@
 			"type": "string",
 			"defaultValue": "ytserveradmin"
 		},
+		"httpLinkedServiceApi_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://dummyjson.com/products"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -75,6 +79,9 @@
 					},
 					"ProjectDBLinkedservice_properties_typeProperties_userName": {
 						"value": "[parameters('ProjectDBLinkedservice_properties_typeProperties_userName')]"
+					},
+					"httpLinkedServiceApi_properties_typeProperties_url": {
+						"value": "[parameters('httpLinkedServiceApi_properties_typeProperties_url')]"
 					}
 				}
 			},
