@@ -1,0 +1,19 @@
+{
+	"name": "ApiJsondata",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "product_api",
+				"fileSystem": "bronze"
+			}
+		},
+		"schema": {}
+	}
+}

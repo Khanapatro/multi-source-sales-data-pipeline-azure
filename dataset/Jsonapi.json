@@ -1,0 +1,17 @@
+{
+	"name": "Jsonapi",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "httpLinkedServiceApi",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation"
+			}
+		},
+		"schema": {}
+	}
+}
