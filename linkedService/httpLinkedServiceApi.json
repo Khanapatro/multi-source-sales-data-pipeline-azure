@@ -1,0 +1,12 @@
+{
+	"name": "httpLinkedServiceApi",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://dummyjson.com/products",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
