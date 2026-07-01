@@ -26,19 +26,75 @@
 							"type": "DelimitedTextReadSettings"
 						}
 					},
-					"enableStaging": false
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
 				},
 				"inputs": [
 					{
 						"referenceName": "csvdata",
 						"type": "DatasetReference",
 						"parameters": {
-							"container": "bronze"
+							"container": {
+								"value": "@pipeline().parameters.container",
+								"type": "Expression"
+							},
+							"folder": {
+								"value": "@pipeline().parameters.folder",
+								"type": "Expression"
+							},
+							"file_name": {
+								"value": "@pipeline().parameters.file_name",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Parquetdata",
+						"type": "DatasetReference",
+						"parameters": {
+							"container": {
+								"value": "@pipeline().parameters.container",
+								"type": "Expression"
+							},
+							"folder": {
+								"value": "@pipeline().parameters.folder",
+								"type": "Expression"
+							}
 						}
 					}
 				]
 			}
 		],
+		"parameters": {
+			"container": {
+				"type": "string",
+				"defaultValue": "bronze"
+			},
+			"folder": {
+				"type": "string"
+			},
+			"file_name": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
